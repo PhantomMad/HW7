@@ -5,9 +5,9 @@ RUN apt update \
     git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
-RUN mkdir maven/ webapps/ tmp/ buildlog/
+RUN mkdir maven/ webapps/ tmp/ buildlog/ java/
 RUN git clone ${GIT_BUILD_LINK} tmp/
-RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/usr/lib/jvm/::' | sed 's:/bin/java::')
+ENV JAVA_HOME=/opt/java
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
