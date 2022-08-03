@@ -1,12 +1,12 @@
 FROM debian:11.3
-RUN apt-get update \
- && apt-get install -y git \
+RUN apt update \
+ && apt install -y git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
-RUN mkdir maven \
-    && mkdir webapps \
-    && mkdir tmp \
-    && mkdir java
+RUN mkdir maven/ \
+    && mkdir webapps/ \
+    && mkdir tmp/ \
+    && mkdir java/
 ENV JAVA_HOME=/opt/java
 ENV PATH=\$PATH:\$JAVA_HOME/bin
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
