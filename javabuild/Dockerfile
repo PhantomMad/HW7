@@ -4,7 +4,7 @@ RUN apt update \
     git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
-RUN mkdir maven/ webapps/ tmp/ buildlog/ java/
+RUN mkdir {maven,webapps,tmp,buildlog,java}
 ENV JAVA_HOME=/opt/java
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
 ENV M2_HOME=/opt/maven
