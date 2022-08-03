@@ -7,6 +7,12 @@ javabuild/maven/
 #Tomcat www files
 webapps/
 
+<<<<<<< HEAD
 #Java bin
 java/
 javabuild/java/
+=======
+#Java Bin
+java/
+javabuild/java/
+>>>>>>> d87695d1aab16afc30ebcaba5c3f233400ae5147
