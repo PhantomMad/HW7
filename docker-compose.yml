@@ -5,7 +5,7 @@ services:
     build:
       context: ./javabuild
     image: debian:maven
-    volumes:
-      - ./javabuild/maven:/opt/maven
-      - ./webapps:/opt/webapps
-      - ./javabuild/java:/opt/java
+#    volumes:
+#      - ./javabuild/maven:/opt/maven
+#      - ./webapps:/opt/webapps
+#      - ./javabuild/java:/opt/java

@@ -3,11 +3,11 @@ RUN apt update \
  && apt install -y git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
-RUN mkdir maven/ \
-    && mkdir webapps/ \
+RUN mkdir webapps/ \
     && mkdir tmp/ \
-    && mkdir java/ \
     && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git tmp/
+COPY java . \
+COPY maven .
 ENV JAVA_HOME=/opt/java
 ENV PATH=\$PATH:\$JAVA_HOME/bin
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
