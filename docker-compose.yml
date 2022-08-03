@@ -2,12 +2,12 @@
 version: '3.9'
 services:
   javabuilder:
-    image: debian:maven
     env_file:
       - ./javabuild/.env
-    build:
-      context: ./javabuild
     volumes:
       - ./javabuild/maven:/opt/maven
       - ./webapps:/opt/webapps
       - ./javabuild/java:/opt/java
+    build:
+      context: ./javabuild
+    image: debian:maven
