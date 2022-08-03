@@ -14,4 +14,3 @@ MVN="${MAVEN_HOME}/bin/mvn"
 git clone "${GIT_BUILD_LINK}" ${BTMP}
 ([ -d ${BTMP} ] && cd ${BTMP}) || (echo "Cannot find ${BTMP}. Check GIT link!" && exit)
 ([ -f ${MVN} ] && exec mvn package -l ${BLOG}) || (echo "Build error! Check maven or pom file" && exit)
-env
