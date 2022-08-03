@@ -1,0 +1,8 @@
+#Server logs folder
+logs/
+
+#Maven files.
+javabuild/maven/
+
+#Tomcat www files
+webapps/
