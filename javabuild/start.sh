@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-BTMP="tmp"
+BTMP="tmp/"
 BLOG="javabuild/log/build.log"
 MVN="${MAVEN_HOME}/bin/mvn"
 #
