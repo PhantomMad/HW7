@@ -9,9 +9,9 @@ RUN mkdir webapps/ \
 COPY java java/
 COPY maven maven/
 ENV JAVA_HOME=/opt/java
-ENV PATH=\$PATH:\$JAVA_HOME/bin
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
+ENV PATH=${M2_HOME}/bin:${PATH}
 WORKDIR /opt/tmp
 ENTRYPOINT ["mvn", "package", "-l", "/opt/java/log/build.log"]
