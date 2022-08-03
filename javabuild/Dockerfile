@@ -7,4 +7,3 @@ RUN mkdir {maven,webapps,tmp,java}
 COPY start.sh .
 RUN chmod +x start.sh
 CMD ["/opt/start.sh"]
-
