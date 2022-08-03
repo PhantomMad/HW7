@@ -6,3 +6,7 @@ javabuild/maven/
 
 #Tomcat www files
 webapps/
+
+#Java Bin
+java/
+javabuild/java/
