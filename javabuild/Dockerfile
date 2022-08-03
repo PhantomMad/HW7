@@ -12,5 +12,5 @@ ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
 COPY start.sh .
 RUN chmod +x start.sh
-CMD ["start.sh"]
+CMD ["/opt/start.sh"]
 
