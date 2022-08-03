@@ -3,10 +3,10 @@ version: '3.9'
 services:
   javabuilder:
     env_file:
-      - "./javabuild/.env"
+      - ./javabuild/.env
     build:
       context: ./javabuild
     volumes:
-      - "./javabuild/maven:/opt/maven"
-      - "./webapps:/opt/webapps"
-      - "./javabuild/java:/opt/java"
+      - ./javabuild/maven:/opt/maven
+      - ./webapps:/opt/webapps
+      - ./javabuild/java:/opt/java
