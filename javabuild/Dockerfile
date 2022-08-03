@@ -1,6 +1,6 @@
 FROM debian:11.3
-RUN apt update \
- && apt install -y git \
+RUN apt-get update \
+ && apt-get install -y git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 RUN mkdir maven \
