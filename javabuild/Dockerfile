@@ -6,7 +6,7 @@ WORKDIR /opt
 RUN mkdir maven \
     && mkdir webapps \
     && mkdir tmp \
-    && mkdir java \
+    && mkdir java
 ENV JAVA_HOME=/opt/java
 ENV PATH=\$PATH:\$JAVA_HOME/bin
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
