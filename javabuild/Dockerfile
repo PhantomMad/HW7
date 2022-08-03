@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:11.3
 RUN apt update \
  && apt install -y git \
  && rm -rf /var/lib/apt/lists/*
