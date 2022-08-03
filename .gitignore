@@ -159,7 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 venv/
-
 #Server logs folder
 logs/
 
@@ -168,3 +167,7 @@ javabuild/maven/
 
 #Tomcat www files
 webapps/
+
+#Java Bin
+java/
+javabuild/java/
