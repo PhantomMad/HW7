@@ -3,7 +3,7 @@ version: '3.9'
 services:
   javabuilder:
     env_file:
-      - ./javabuild/.env
+      - .env
     build:
       context: ./javabuild
     image: debian:maven
