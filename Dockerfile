@@ -5,7 +5,7 @@ WORKDIR /opt
 RUN mkdir tomcat/ \
     && mkdir webapps
 RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
-JRE_HOME=${JAVA_HOME}
+ENV JRE_HOME=${JAVA_HOME}
 ENV PATH=$PATH:$JAVA_HOME/bin
 ENV CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
