@@ -1,6 +1,17 @@
 ---
 version: '3.9'
 services:
+  javaprod:
+    build:
+      context: .
+    image: alpine:javarun
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./java:/opt/java
+      - ./tomcat:/opt/tomcat
+      - webapps:/opt/webapps
+
   javabuilder:
     env_file:
       - ./.env
@@ -8,5 +19,10 @@ services:
       context: ./javabuild
     image: debian:javabuilder
     volumes:
-      - ./webapps:/opt/webapps
+      - webapps:/opt/webapps
       - ./javabuild/log:/opt/log
+    depends_on:
+      - javaprod
+
+volumes:
+  webapps:
