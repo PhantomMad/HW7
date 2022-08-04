@@ -170,3 +170,6 @@ webapps/
 #Java Bin
 java/
 javabuild/java/
+
+#Tomcat
+tomcat/
