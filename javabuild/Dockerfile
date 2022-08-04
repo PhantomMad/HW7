@@ -5,7 +5,7 @@ RUN apt update \
 WORKDIR /opt
 RUN mkdir webapps/ \
     && mkdir tmp/ \
-    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git tmp/
+    && git clone https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git tmp/
 COPY java java/
 COPY maven maven/
 ENV JAVA_HOME=/opt/java
