@@ -10,5 +10,6 @@ ENV CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 COPY start.sh .
 RUN ["chmod", "+x", "./start.sh"]
+EXPOSE 8080
 ENTRYPOINT ["./start.sh"]
 
