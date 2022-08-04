@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mvn package -f /opt/tmp/ -l opt/webapps/build.log
+mvn package -f tmp/ -l log/build.log

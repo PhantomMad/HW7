@@ -7,3 +7,4 @@ services:
     image: debian:javabuilder
     volumes:
       - ./webapps:/opt/webapps
+      - ./javabuild/log:/opt/log
