@@ -11,4 +11,4 @@ RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
-ENTRYPOINT ["mvn", "package", "-f", "webapps", "-l", "/opt/webapps/build.log"]
+ENTRYPOINT ["mvn", "package", "-f", "webapps/", "-l", "/opt/webapps/build.log"]
