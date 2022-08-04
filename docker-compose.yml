@@ -2,6 +2,8 @@
 version: '3.9'
 services:
   javabuilder:
+    environment:
+      GHUB_LINK: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
     build:
       context: ./javabuild
     image: debian:javabuilder

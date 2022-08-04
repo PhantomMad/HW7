@@ -6,8 +6,8 @@ RUN apt update \
 WORKDIR /opt
 RUN mkdir webapps/ \
     && mkdir tmp/ \
-    && mkdir log/ \
-    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git tmp/
+    && mkdir log/
+#    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git tmp/
 COPY maven maven/
 COPY start.sh .
 RUN ["chmod", "+x", "./start.sh"]
