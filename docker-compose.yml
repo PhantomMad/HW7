@@ -3,7 +3,7 @@ version: '3.9'
 services:
   javabuilder:
     environment:
-      HUB_LINK: ttps://github.com/MithunTechnologiesDevOps/java-web-app-docker.git
+      HUB_LINK: https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git
     image: debian:maven
     volumes:
       - ./webapps:/opt/webapps
