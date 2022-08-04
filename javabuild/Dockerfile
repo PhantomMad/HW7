@@ -12,6 +12,7 @@ COPY maven maven/
 COPY start.sh .
 RUN ["chmod", "+x", "./start.sh"]
 RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
+ENV TZ=Europe/Moscow
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
