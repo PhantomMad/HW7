@@ -7,9 +7,7 @@ WORKDIR /opt
 RUN mkdir webapps/ \
     && mkdir tmp/
 COPY maven maven/
-ENV JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
-ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
+RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
