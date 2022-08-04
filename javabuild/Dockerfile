@@ -1,16 +1,18 @@
-FROM debian:latest
+FROM debian:11.3
 RUN apt update \
- && apt install -y \
-    git \
+ && apt install -y git \
+    default-jdk \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
-RUN mkdir {maven,webapps,tmp,buildlog,java}
-ENV JAVA_HOME=/opt/java
-ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
+RUN mkdir webapps/ \
+    && mkdir tmp/ \
+    && mkdir log/
+COPY maven maven/
+COPY start.sh .
+RUN ["chmod", "+x", "./start.sh"]
+RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
+ENV TZ=Europe/Moscow
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
-COPY start.sh .
-RUN chmod +x start.sh
-CMD ["/opt/start.sh"]
-
+ENTRYPOINT ["./start.sh"]
