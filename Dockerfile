@@ -1,5 +1,6 @@
 FROM alpine:latest
-RUN apk --no-cache update
+RUN apk --no-cache update \
+    && apk --no-cache add wget bash
 WORKDIR /opt
 RUN mkdir java/ \
     && mkdir tomcat/ \
