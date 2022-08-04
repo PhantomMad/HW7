@@ -10,7 +10,7 @@ services:
     volumes:
       - ./java:/opt/java
       - ./tomcat:/opt/tomcat
-      - webapps:/opt/tomcat/webapps
+      - webapps:/opt/webapps
 
   javabuilder:
     env_file:
