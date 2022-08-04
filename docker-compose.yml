@@ -1,12 +1,19 @@
 ---
 version: '3.9'
 services:
-  javabuilder:
-    env_file:
-      - ./.env
+  javaprod:
     build:
-      context: ./javabuild
-    image: debian:javabuilder
+      context: .
+    image: alpine:javarun
     volumes:
       - ./webapps:/opt/webapps
-      - ./javabuild/log:/opt/log
+
+#  javabuilder:
+#    env_file:
+#      - ./.env
+#    build:
+#      context: ./javabuild
+#    image: debian:javabuilder
+#    volumes:
+#      - ./webapps:/opt/webapps
+#      - ./javabuild/log:/opt/log
