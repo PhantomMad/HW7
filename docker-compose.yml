@@ -6,7 +6,9 @@ services:
       context: .
     image: alpine:javarun
     volumes:
-      - ./webapps:/opt/webapps
+      - ./java:/opt/java
+      - ./tomcat:/opt/tomcat
+      - ./webapps:/opt/tomcat/webapps/
 
 #  javabuilder:
 #    env_file:
