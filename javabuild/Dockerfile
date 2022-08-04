@@ -14,4 +14,4 @@ ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
 WORKDIR /opt/tmp
-ENTRYPOINT ["mvn", "package", "-l", "/opt/java/log/build.log"]
+ENTRYPOINT ["mvn", "package", "-l", "/opt/webapps/build.log"]
