@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-export JAVA_HOME=/opt/java
-export PATH=\$PATH:\$JAVA_HOME/bin
-export JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
-export M2_HOME=/opt/maven
-export MAVEN_HOME=/opt/maven
-
 BTMP="/opt/tmp"
 BLOG="/opt/java/log/build.log"
 MVN="${MAVEN_HOME}/bin/mvn"
