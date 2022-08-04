@@ -9,6 +9,7 @@ RUN mkdir webapps/ \
 COPY java java/
 COPY maven maven/
 ENV JAVA_HOME=/opt/java
+ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
