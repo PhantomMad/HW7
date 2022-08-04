@@ -6,7 +6,7 @@ services:
       context: .
     image: alpine:javarun
     ports:
-      - "80:8080"
+      - "8085:8080"
     volumes:
       - ./java:/opt/java
       - ./tomcat:/opt/tomcat
