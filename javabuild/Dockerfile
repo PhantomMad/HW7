@@ -5,7 +5,7 @@ RUN apt update \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 RUN mkdir webapps/ \
-    && mkdir tmp/ \
+    && mkdir tmp/
 COPY maven maven/
 ENV JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
