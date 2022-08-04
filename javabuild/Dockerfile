@@ -5,7 +5,8 @@ RUN apt update \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 RUN mkdir webapps/ \
-    && mkdir tmp/
+    && mkdir tmp/ \
+    && git clone ${HUB_LINK} tmp/
 COPY maven maven/
 RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV M2_HOME=/opt/maven
