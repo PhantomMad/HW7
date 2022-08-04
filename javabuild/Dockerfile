@@ -5,10 +5,14 @@ RUN apt update \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 RUN mkdir webapps/ \
-    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git webapps/
+    && mkdir tmp/ \
+    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git tmp/
 COPY maven maven/
+COPY start.sh .
+RUN ["chmod", "+x", "./start.sh"]
 RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV M2_HOME=/opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
-ENTRYPOINT ["mvn", "package", "-f", "webapps/", "-l", "/opt/webapps/build.log"]
+ENTRYPOINT ["./start.sh"]
+#ENTRYPOINT ["mvn", "package", "-f", "tmp/", "-l", "webapps/build.log"]
