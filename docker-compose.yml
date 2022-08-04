@@ -10,14 +10,18 @@ services:
     volumes:
       - ./java:/opt/java
       - ./tomcat:/opt/tomcat
-      - ./webapps:/opt/tomcat/webapps/
+      - webapps:/opt/tomcat/webapps/
+    depends_on:
+      - javabuilder
 
-#  javabuilder:
-#    env_file:
-#      - ./.env
-#    build:
-#      context: ./javabuild
-#    image: debian:javabuilder
-#    volumes:
-#      - ./webapps:/opt/webapps
-#      - ./javabuild/log:/opt/log
+  javabuilder:
+    env_file:
+      - ./.env
+    build:
+      context: ./javabuild
+    image: debian:javabuilder
+    volumes:
+      - webapps:/opt/webapps
+      - ./javabuild/log:/opt/log
+volumes:
+  webapps:
