@@ -2,8 +2,6 @@
 version: '3.9'
 services:
   javabuilder:
-    build:
-      context: ./javabuild
     image: debian:maven
     volumes:
       - ./webapps:/opt/webapps
