@@ -10,9 +10,7 @@ services:
     volumes:
       - ./java:/opt/java
       - ./tomcat:/opt/tomcat
-      - webapps:/opt/tomcat/webapps/
-    depends_on:
-      - javabuilder
+      - webapps:/opt/tomcat/webapps
 
   javabuilder:
     env_file:
@@ -23,5 +21,8 @@ services:
     volumes:
       - webapps:/opt/webapps
       - ./javabuild/log:/opt/log
+    depends_on:
+      - javaprod
+
 volumes:
   webapps:
