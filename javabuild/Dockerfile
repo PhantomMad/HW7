@@ -6,7 +6,7 @@ RUN apt update \
 WORKDIR /opt
 RUN mkdir webapps/ \
     && mkdir tmp/ \
-    && git clone ${HUB_LINK} tmp/
+    && git clone https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git tmp/
 COPY maven maven/
 RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed 's:/bin/java::')
 ENV M2_HOME=/opt/maven
