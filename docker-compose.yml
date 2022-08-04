@@ -4,5 +4,6 @@ services:
   javabuilder:
     build:
       context: ./javabuild
+    image: debian:javabuilder
     volumes:
       - ./webapps:/opt/webapps
