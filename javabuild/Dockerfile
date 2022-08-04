@@ -1,14 +1,14 @@
 FROM debian:11.3
 RUN apt update \
  && apt install -y git \
+    default-jdk \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 RUN mkdir webapps/ \
     && mkdir tmp/ \
     && git clone https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git tmp/
-COPY java java/
 COPY maven maven/
-ENV JAVA_HOME=/opt/java
+ENV JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 ENV JAVA_OPTS=-Djava.security.egd=file:///dev/urandom
 ENV M2_HOME=/opt/maven
